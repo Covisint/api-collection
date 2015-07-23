@@ -1,0 +1,567 @@
+{
+	"id": "b45f885b-aab9-1701-5766-7828a93bfa68",
+	"name": "Covisint_Apigee_4.0",
+	"description": "This collection is a \"work in progress\" of all the Covisint Apigee 4.0 API requests.",
+	"order": [],
+	"folders": [
+		{
+			"id": "6653c7eb-4520-aac0-f184-0db18a8086c4",
+			"name": "HealthChecks",
+			"description": "",
+			"write": true,
+			"order": [
+				"e53e888a-a65d-0f86-7d59-368360c6c813"
+			],
+			"collection": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"owner": "",
+			"collection_name": "Covisint_Apigee_4.0",
+			"collection_owner": "",
+			"collection_id": "b45f885b-aab9-1701-5766-7828a93bfa68"
+		},
+		{
+			"id": "dc28b43e-a335-d05c-dc6e-049639196001",
+			"name": "MONITORS",
+			"description": "These requests were designed for our Dynatrace monitors. They of course can be used to test the current set of APIs as well.",
+			"write": true,
+			"order": [
+				"f54007dc-cc01-f097-e301-129e725836ef",
+				"07e7acb6-fc60-e0c3-2b38-1fe6a4b81fd6",
+				"b8b9fa01-e53f-ffd9-844f-ba5572ec1cab",
+				"4799ccbb-2e0c-497b-4185-995d65fce479",
+				"d14d2325-717b-6e85-fa5e-66cbf21b85e1",
+				"d6ed4417-c703-6805-46e6-7772927d4092",
+				"b781224a-2a48-e45f-2673-363e4d388cfc",
+				"7355cef8-de4a-f8bc-85ef-2b206c998b9b",
+				"f83bdf50-18aa-527c-6011-03ff8c002919",
+				"233b67ba-779d-6fff-fa7a-1b3b1a43a248"
+			],
+			"collection": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"owner": "",
+			"collection_name": "Covisint_Apigee_4.0",
+			"collection_owner": "",
+			"collection_id": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"collectionId": "b45f885b-aab9-1701-5766-7828a93bfa68"
+		},
+		{
+			"id": "fe3617db-680a-76dc-5727-3d757e40d068",
+			"name": "Troubleshooting",
+			"description": "These requests are used for troubleshooting issues with our Apigee 4.0 installations.",
+			"write": true,
+			"order": [
+				"373ef588-bfa2-e728-77e8-3548b5ed087e",
+				"f80662e8-33ec-f29e-822c-39a793926498",
+				"efcc137e-161d-73d3-7cbf-f3ef4d032c66",
+				"a4ec7738-b76f-4c7e-849b-71a51761b0f2",
+				"25386c36-4d71-4a53-b6f8-83020932c387",
+				"03216f1d-ad52-03cd-dfc5-05b1159e7f75"
+			],
+			"collection": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"owner": "",
+			"collection_name": "Covisint_Apigee_4.0",
+			"collection_owner": "",
+			"collection_id": "b45f885b-aab9-1701-5766-7828a93bfa68"
+		}
+	],
+	"timestamp": 1437401606102,
+	"owner": "",
+	"remoteLink": "https://www.getpostman.com/collections/3675395cbcfd2d3a9c2e",
+	"public": false,
+	"requests": [
+		{
+			"id": "03216f1d-ad52-03cd-dfc5-05b1159e7f75",
+			"headers": "Authorization: {{basic_auth}}\n",
+			"url": "{{ms_url}}/v1/servers?pod=gateway&type=router",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1437412009224,
+			"name": "R Info From MS",
+			"description": "This request will call the management server and ask it for what it knows about the router components.",
+			"collectionId": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"responses": [],
+			"folder": "fe3617db-680a-76dc-5727-3d757e40d068"
+		},
+		{
+			"id": "07e7acb6-fc60-e0c3-2b38-1fe6a4b81fd6",
+			"headers": "Accept: */*\nAuthorization: {{basic_auth}}\n",
+			"url": "{{url}}/oauth/v2/token",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "{{username}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "{{password}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1437497975944,
+			"name": "Get_Person_Access_Token_V2",
+			"description": "Gets an person level access token to be used within these monitor requests.\n\nAssociated with monitor:\nnonprod-PLT-AWS-USEast1-IDM-Microservice-OauthV2\nprd-PLT-AWS-USEast1-IDM-Microservice-OauthV2",
+			"collectionId": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"responses": []
+		},
+		{
+			"id": "233b67ba-779d-6fff-fa7a-1b3b1a43a248",
+			"headers": "Authorization: {{app_lvl_access}}\n",
+			"url": "{{url}}/oauth/v2/introspect",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "token",
+					"value": "{{person_lvl_refresh}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "token_type_hint",
+					"value": "refresh_token",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1437507477925,
+			"name": "introspect",
+			"description": "",
+			"collectionId": "b45f885b-aab9-1701-5766-7828a93bfa68"
+		},
+		{
+			"id": "25386c36-4d71-4a53-b6f8-83020932c387",
+			"headers": "Authorization: {{basic_auth}}\n",
+			"url": "{{ms_url}}/v1/servers/{{mp3_uuid}}",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1437410679434,
+			"name": "MS Get Component Info by UUID",
+			"description": "This request will call the management server and retrieve information about a compoent when given a UUID.",
+			"collectionId": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"responses": [],
+			"folder": "fe3617db-680a-76dc-5727-3d757e40d068"
+		},
+		{
+			"id": "373ef588-bfa2-e728-77e8-3548b5ed087e",
+			"headers": "Authorization: {{basic_auth}}\n",
+			"url": "{{ms_url}}/v1/servers?pod=gateway&type=message-processor",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1437402705671,
+			"name": "MP Info From MS",
+			"description": "This request will call the management server and ask it for what it knows about the message processor components.ASDF",
+			"collectionId": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"responses": [],
+			"folder": "fe3617db-680a-76dc-5727-3d757e40d068"
+		},
+		{
+			"id": "4799ccbb-2e0c-497b-4185-995d65fce479",
+			"headers": "Accept: application/vnd.com.covisint.platform.group.v1+json\nAuthorization: {{app_lvl_access}}\n",
+			"url": "{{url}}/group/v1/groups?page=1&pageSize=1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "{{username}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "{{password}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1437590995009,
+			"name": "Retrieve_Group",
+			"description": "Associated with monitor:\nnonprod-PLT-AWS-USEast1-IDM-Microservice-retrieveGroupResource\nprd-PLT-AWS-USEast1-IDM-Microservice-retrieveGroupResource",
+			"collectionId": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"responses": []
+		},
+		{
+			"id": "7355cef8-de4a-f8bc-85ef-2b206c998b9b",
+			"headers": "Accept: application/vnd.com.covisint.platform.package.v1+json\nAuthorization: {{app_lvl_access}}\n",
+			"url": "{{url}}/service/v1/packages?page=1&pageSize=1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "{{username}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "{{password}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1437590067520,
+			"name": "Retrieve_ServicePackage",
+			"description": "Associated with monitor:\nnonprod-PLT-AWS-USEast1-IDM-Microservice-retrieveServicePackageResource\nprd-PLT-AWS-USEast1-IDM-Microservice-retrieveServicePackageResource",
+			"collectionId": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"responses": []
+		},
+		{
+			"id": "a4ec7738-b76f-4c7e-849b-71a51761b0f2",
+			"headers": "Authorization: {{basic_auth}}\n",
+			"url": "{{ms_url}}/v1/servers/{{mp1_uuid}}",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "reachable",
+					"value": "true",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1437410697914,
+			"name": "MS Change MP Reachable",
+			"description": "This request will call the management server and set the reachability flag based on the parameter that is set. Use this call to toggle reachability to/from true/false.",
+			"collectionId": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"responses": [],
+			"folder": "fe3617db-680a-76dc-5727-3d757e40d068"
+		},
+		{
+			"id": "b781224a-2a48-e45f-2673-363e4d388cfc",
+			"headers": "Accept: application/vnd.com.covisint.platform.securityquestion.v1+json\nAuthorization: {{app_lvl_access}}\n",
+			"url": "{{url}}/authn/v2/securityQuestions?page=1&pageSize=1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "{{username}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "{{password}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1437589748192,
+			"name": "Retrieve_SecurityQuestions",
+			"description": "Associated with monitor:\nnonprod-PLT-AWS-USEast1-IDM-Microservice-retrieveSecurityQuestions\nprd-PLT-AWS-USEast1-IDM-Microservice-retrieveSecurityQuestions",
+			"collectionId": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"responses": []
+		},
+		{
+			"id": "b8b9fa01-e53f-ffd9-844f-ba5572ec1cab",
+			"headers": "Accept: */*\nAuthorization: {{basic_auth}}\n",
+			"url": "{{url}}/oauth/v2/token",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "client_credentials",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "scope",
+					"value": "all",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1437502782693,
+			"name": "Get_App_Access_Token_V2",
+			"description": "Gets an application level access token to be used within these monitor requests.\n\nAssociated with monitor:\nnonprod-PLT-AWS-USEast1-IDM-Oauth-V2\nprd-PLT-AWS-USEast1-IDM-Oauth-V2",
+			"collectionId": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"responses": []
+		},
+		{
+			"id": "d14d2325-717b-6e85-fa5e-66cbf21b85e1",
+			"headers": "Accept: application/vnd.com.covisint.platform.person.v1+json\nAuthorization: {{app_lvl_access}}\n",
+			"url": "{{url}}/person/v1/persons?page=1&pageSize=1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "{{username}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "{{password}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1437591003633,
+			"name": "Retrieve_Person",
+			"description": "Associated with monitor:\nnonprod-PLT-AWS-USEast1-IDM-Microservice-retrievePersonResource\nprd-PLT-AWS-USEast1-IDM-Microservice-retrievePersonResource",
+			"collectionId": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"responses": []
+		},
+		{
+			"id": "d6ed4417-c703-6805-46e6-7772927d4092",
+			"headers": "Accept: application/vnd.com.covisint.platform.organization.v1+json\nAuthorization: {{app_lvl_access}}\n",
+			"url": "{{url}}/organization/v1/organizations?page=1&pageSize=1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "{{username}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "{{password}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1437591010745,
+			"name": "Retrieve_Organization",
+			"description": "Associated with monitor:\nnonprod-PLT-AWS-USEast1-IDM-Microservice-retrieveOrganizationResource\nprd-PLT-AWS-USEast1-IDM-Microservice-retrieveOrganizationResource",
+			"collectionId": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"responses": []
+		},
+		{
+			"id": "e53e888a-a65d-0f86-7d59-368360c6c813",
+			"headers": "",
+			"url": "{{url}}/v1/HealthCheck/",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1437662669757,
+			"name": "HealthCheck MP IP Address",
+			"description": "This request will return the masked IP address of the message processor that serviced the request.",
+			"collectionId": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"responses": []
+		},
+		{
+			"id": "efcc137e-161d-73d3-7cbf-f3ef4d032c66",
+			"headers": "Authorization: {{basic_auth}}\n",
+			"url": "{{mp1_url}}/v1/servers/self",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1437411878462,
+			"name": "MP Self Info",
+			"description": "This request will call the configured message processor and report back information about itself.",
+			"collectionId": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"responses": [],
+			"folder": "fe3617db-680a-76dc-5727-3d757e40d068"
+		},
+		{
+			"id": "f54007dc-cc01-f097-e301-129e725836ef",
+			"headers": "Authorization: {{basic_auth}}\ntype: client_credentials\napplication-id: {{application-id}}\nclient_id: {{client_id}}\nclient_secret: \nAccept: application/vnd.com.covisint.platform.oauth.token.v1+json\n",
+			"url": "{{url}}/oauth/v1/token",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"data": [],
+			"dataMode": "params",
+			"name": "Get_App_Access_Token_V1",
+			"description": "Gets an application level access token to be used within these monitor requests.\n\nAssociated with monitors:\nnonprod-PLT-AWS-USEast1-IDM-Microservice-Oauth\nprd-PLT-AWS-USEast1-IDM-Microservice-Oauth",
+			"descriptionFormat": "html",
+			"time": 1437495240253,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "dc28b43e-a335-d05c-dc6e-049639196001"
+		},
+		{
+			"id": "f80662e8-33ec-f29e-822c-39a793926498",
+			"headers": "Authorization: {{basic_auth}}\n",
+			"url": "{{mp1_url}}/v1/cluster/members",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1437411865852,
+			"name": "MP Cluster Info",
+			"description": "This request will call the configured message process and report back the routers and message processors it is connected to. Simply change the X in {{mpX_url}} to query a different message processor.",
+			"collectionId": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"responses": [],
+			"folder": "fe3617db-680a-76dc-5727-3d757e40d068"
+		},
+		{
+			"id": "f83bdf50-18aa-527c-6011-03ff8c002919",
+			"headers": "Accept: application/vnd.com.covisint.platform.device.v1+json;includeProperties=true;includeDeviceType=true;\nAuthorization: {{app_lvl_access}}\n",
+			"url": "{{url}}/device/v1/devices?page=1&pageSize=1&owner.id={{person_id}}",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "{{username}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "{{password}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1437590288456,
+			"name": "Retrieve_Device",
+			"description": "Associated with monitor:\nnonprod-PLT-AWS-USEast1-IDM-Microservice-getDevice\nprd-PLT-AWS-USEast1-IDM-Microservice-getDevice",
+			"collectionId": "b45f885b-aab9-1701-5766-7828a93bfa68",
+			"responses": []
+		}
+	]
+}
