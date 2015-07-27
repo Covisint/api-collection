@@ -219,3 +219,6 @@ pip-log.txt
 ## Postman Environments
 #############
 *.postman_environment
+*.postman_env*
+*.post*
+*.post*_en*
